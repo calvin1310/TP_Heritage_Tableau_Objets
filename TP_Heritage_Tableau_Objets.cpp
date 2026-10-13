@@ -1,5 +1,6 @@
 #include "Employe.h"
 #include <iostream>
+#include <stdlib.h>
 
 int main()
 {
@@ -36,8 +37,8 @@ int main()
 			cout << "Nom du nouveau mois : ";
 			cin >> e.mois;
 			e.saisir();
+			system("cls");
 		}
 	} while (rep == 'o');
 
-	return 0;
 }
