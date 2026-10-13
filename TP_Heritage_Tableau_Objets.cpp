@@ -1,9 +1,11 @@
 #include "Employe.h"
+#include <iostream>
 
 int main()
 {
 	Entreprise e;
 	e.nom = "Promo SN-IR";
+	e.mois = "Fevrier";
 
 	e.vendeurs[0] = Vendeur("Dupont", "Paul", 30, 10);
 	e.vendeurs[1] = Vendeur("Durand", "Pierre", 28, 5);
@@ -24,5 +26,18 @@ int main()
 	e.interimaires[3] = Interimaire("Faure", "Jean-Jean", 24, 0);
 	e.nbInterimaires = 4;
 
-	e.affiche();
+	char rep;
+	do {
+		e.affiche();
+
+		cout << endl << "Changer de mois ? (o/n) : ";
+		cin >> rep;
+		if (rep == 'o') {
+			cout << "Nom du nouveau mois : ";
+			cin >> e.mois;
+			e.saisir();
+		}
+	} while (rep == 'o');
+
+	return 0;
 }
